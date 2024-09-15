@@ -12,7 +12,9 @@ const DeleteBookPage = () => {
   useEffect(() => {
     const fetchBook = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/books/${id}`);
+        const response = await axios.get(
+          `https://book-exchange-platform-5zk3.onrender.com/books/${id}`
+        );
         if (response.data.book) {
           setBook(response.data.book);
         } else {
@@ -31,12 +33,15 @@ const DeleteBookPage = () => {
   const handleDelete = async () => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:8000/books/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        withCredentials: true,
-      });
+      await axios.delete(
+        `https://book-exchange-platform-5zk3.onrender.com/books/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          withCredentials: true,
+        }
+      );
       navigate("/"); // Redirect to the books list after successful deletion
     } catch (error) {
       setError("Error deleting the book");

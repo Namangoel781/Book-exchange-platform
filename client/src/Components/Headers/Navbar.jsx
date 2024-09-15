@@ -26,7 +26,7 @@ export default function Component() {
 
         if (token) {
           const response = await axios.get(
-            "http://localhost:8000/api/auth/validate-session",
+            "https://book-exchange-platform-5zk3.onrender.com/api/auth/validate-session",
             {
               headers: {
                 Authorization: `Bearer ${token}`,

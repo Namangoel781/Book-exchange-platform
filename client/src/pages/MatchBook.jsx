@@ -19,11 +19,14 @@ const MatchBook = () => {
   const fetchMatches = async () => {
     try {
       const token = localStorage.getItem("token"); // Assuming you store JWT token in localStorage
-      const response = await axios.get("http://localhost:8000/matches", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await axios.get(
+        "https://book-exchange-platform-5zk3.onrender.com/matches",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       setMatches(response.data.matches);
       setLoading(false);

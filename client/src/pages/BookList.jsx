@@ -13,9 +13,12 @@ const BookList = () => {
 
   const fetchBooksAndLikedBooks = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/books", {
-        // withCredentials: true,
-      });
+      const response = await axios.get(
+        "https://book-exchange-platform-5zk3.onrender.com/books",
+        {
+          // withCredentials: true,
+        }
+      );
       const { data } = response;
       setBooks(data.data);
 

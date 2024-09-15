@@ -15,7 +15,7 @@ const Wishlist = () => {
         try {
           const token = localStorage.getItem("token");
           const response = await axios.get(
-            `http://localhost:8000/books/${user._id}/wishlist`,
+            `https://book-exchange-platform-5zk3.onrender.com/books/${user._id}/wishlist`,
             {
               headers: {
                 Authorization: `Bearer ${token}`,

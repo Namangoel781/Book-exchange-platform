@@ -49,7 +49,7 @@ export default function Login() {
     console.log("Starting login request...");
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/auth",
+        "https://book-exchange-platform-5zk3.onrender.com/api/auth",
         {
           email,
           password,

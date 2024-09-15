@@ -34,11 +34,14 @@ export default function UpdateBook() {
     const fetchBook = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get(`http://localhost:8000/books/${id}`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await axios.get(
+          `https://book-exchange-platform-5zk3.onrender.com/books/${id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
         setBook(response.data.book);
         setTitle(response.data.book.title);
         setAuthor(response.data.book.author);
@@ -59,7 +62,7 @@ export default function UpdateBook() {
       const token = localStorage.getItem("token");
 
       await axios.put(
-        `http://localhost:8000/books/${id}`,
+        `https://book-exchange-platform-5zk3.onrender.com/books/${id}`,
         {
           title,
           author,

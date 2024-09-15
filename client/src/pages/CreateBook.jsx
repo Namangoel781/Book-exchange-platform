@@ -41,7 +41,7 @@ export default function CreateBook() {
     const token = localStorage.getItem("token");
     try {
       await axios.post(
-        "http://localhost:8000/books",
+        "https://book-exchange-platform-5zk3.onrender.com/books",
         {
           title,
           author,

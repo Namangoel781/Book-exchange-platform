@@ -27,12 +27,15 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8000/api/users", {
-        firstName,
-        lastName,
-        email,
-        password,
-      });
+      await axios.post(
+        "https://book-exchange-platform-5zk3.onrender.com/api/users",
+        {
+          firstName,
+          lastName,
+          email,
+          password,
+        }
+      );
       navigate("/login");
       console.log(res.message);
       alert("Registration Successfull");
